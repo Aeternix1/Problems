@@ -38,5 +38,4 @@ def set_delay(seconds):
     """Given a number of seconds will set a delay"""
     """Between commands"""
     time.sleep(seconds)
-
     
