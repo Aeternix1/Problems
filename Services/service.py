@@ -8,7 +8,7 @@ def check_service_status(service):
     """Of the service and prints whether service is"""
     """Active or inactive"""
     try:
-        output = subprocess.check_output(["service", "apache2", "status"])
+        output = subprocess.check_output(["service", service, "status"])
     except subprocess.CalledProcessError as e:
         output = e.output
         output = output.decode('utf-8')
@@ -24,6 +24,8 @@ def check_service_status(service):
     elif "(dead)" in output:
         print("service is inactive")
         status = "inactive"
+    else:
+        status = "wrong"
     return status
 
 def start_service(service):

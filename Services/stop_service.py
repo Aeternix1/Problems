@@ -7,15 +7,15 @@
 from service import stop_service, check_service_status,set_delay
 
 #List contains all of the services you want to stop
-services_to_stop = ["apache2", "apache2"]
+services_to_stop = ["VontuUpdate", "VontuNotifier" , "VontuMonitorController", "VontuManager" , "VontuMonitor", "VontuIncidentPersister"]
 
 #Set the delay (s) between starting a service and checking the status of the service
-delay = 120
+delay = 10
 
 #Starts all services in services_to_start list
 #If any of the services failed to start program will be exited
 for service in services_to_stop:
-    print(service + " service stopped")
+    print("stopping " + service)
     stop_service(service)
     set_delay(delay)
     status = check_service_status(service)
@@ -24,7 +24,10 @@ for service in services_to_stop:
         print("User intervention required")
         print("Exiting program")
         break
-
+    elif (status == "wrong"):
+        print("Something went wrong")
+        print("User intervention required")
+        print("Exiting program")
 
 
 
