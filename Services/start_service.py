@@ -7,7 +7,7 @@
 from service import start_service, check_service_status,set_delay
 
 #List contains all of the services you want to start
-services_to_start = ["VontuUpdate", "VontuNotifier" , "VontuMonitorController", "VontuManager" , "VontuMonitor", "VontuIncidentPersister"]
+services_to_start = ["apache2"]
 
 #Set the delay (s) between starting a service and checking the status of the service
 delay = 90
@@ -21,11 +21,6 @@ for service in services_to_start:
     status = check_service_status(service)
     if (status == "inactive"):
         print(service.title() + " did not start")
-        print("User intervention required")
-        print("Exiting program")
-        break
-    elif (status == "wrong"):
-        print("Something went wrong")
         print("User intervention required")
         print("Exiting program")
         break

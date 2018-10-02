@@ -24,8 +24,6 @@ def check_service_status(service):
     elif "(dead)" in output:
         print("service is inactive")
         status = "inactive"
-    else:
-        status = "wrong"
     return status
 
 def start_service(service):
