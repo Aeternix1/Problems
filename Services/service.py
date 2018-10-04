@@ -36,7 +36,7 @@ def delay_action(seconds):
     """Between commands"""
     time.sleep(seconds)
 
-def start_or_stop_services(services, start_or_stop, delay):
+def start_or_stop_services(services, delay, start_or_stop):
     """Program will perform start or stop operation on all services in list"""
     """Program will perform operation, wait for user specified delay and print
     the status of the service"""
@@ -50,9 +50,9 @@ def start_or_stop_services(services, start_or_stop, delay):
             delay_action(delay)
             status = check_service_status(service)
             if (status == "active"):
-                print(service.title() + "started successfully")
+                print(service.title() + " started successfully")
             elif (status == "inactive"):
-                print(service.title() + "was not started successfully")
+                print(service.title() + " was not started successfully")
                 print("User intervention required")
                 print("Exiting program")
                 break
@@ -68,9 +68,9 @@ def start_or_stop_services(services, start_or_stop, delay):
             delay_action(delay)
             status = check_service_status(service)
             if (status == "inactive"):
-                print(service.title() + "was stopped successfully")
+                print(service.title() + " was stopped successfully")
             elif (status == "active"):
-                print(service.title() + "was not stopped successfully")
+                print(service.title() + " was not stopped successfully")
                 print("User intervention required")
                 print("Exiting program")
                 break

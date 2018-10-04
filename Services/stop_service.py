@@ -4,14 +4,12 @@
 #If the service is active print "User intervention required" and close program
 #If the service is inactive move onto the next service
 
-from service import stop_service, check_service_status,set_delay
+from service import start_or_stop_services
 
 #List contains all of the services you want to stop
 services_to_stop = ["apache2"]
 
 #Set the delay (s) between starting a service and checking the status of the service
 delay = 10
-
-#Starts all services in services_to_start list
-#If any of the services failed to start program will be exited
+start_or_stop_services(services_to_stop, delay, start_or_stop="stop")
 
