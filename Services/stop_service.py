@@ -14,17 +14,4 @@ delay = 10
 
 #Starts all services in services_to_start list
 #If any of the services failed to start program will be exited
-for service in services_to_stop:
-    print("stopping service " + service)
-    stop_service(service)
-    set_delay(delay)
-    status = check_service_status(service)
-    if (status == "active"):
-        print(service.title() + " did not stop")
-        print("User intervention required")
-        print("Exiting program")
-        break
-
-
-
 
