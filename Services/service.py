@@ -18,13 +18,13 @@ def check_service_status(service):
         output = output.split()
    
     #Possible issue with service status
-    if "(running)" in output:
+    if "loaded" in output:
         print("service is active")
         status = "active"
-    elif "(dead)" in output:
-        print("service is inactive")
-        status = "inactive"
-    return status
+    # elif "(dead)" in output:
+        # print("service is inactive")
+        # status = "inactive"
+    # return status
 
 def start_service(service):
     """Given a service name will start the service"""

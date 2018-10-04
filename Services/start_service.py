@@ -10,7 +10,7 @@ from service import start_service, check_service_status,set_delay
 services_to_start = ["apache2"]
 
 #Set the delay (s) between starting a service and checking the status of the service
-delay = 90
+delay = 10
 
 #Starts all services in services_to_start list
 #If any of the services failed to start program will be exited
