@@ -1,8 +1,8 @@
-#Stops a service
-#Delays for 2 minutes
-#Checks that the service is inactive
-#If the service is active print "User intervention required" and close program
-#If the service is inactive move onto the next service
+#Starts a service
+#Waits for user specified delay
+#Checks that the service is active
+#If the service is inactive print "User intervention required" and close program
+#If the service is active move onto the next service
 
 from service import start_or_stop_services
 
