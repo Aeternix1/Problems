@@ -17,7 +17,9 @@ def check_service_status(service):
         output = output.split()
 
     status = "default"
-    if "not" in output:
+    if (is_string_in_list(output, "(running)")):
+        status = "active"
+    elif (is_string_in_list(output, "(dead)")): 
         status = "inactive"
     return status
 
@@ -82,7 +84,6 @@ def is_string_in_list(list_of_words, *input_string):
     string is present in the list. E.g. "not running" in a list of output"""
 
     string_in_list = True
-    print(input_string) 
    
     first_string_positions = [i for i, x in enumerate(list_of_words) if x ==\
             input_string[0]]
