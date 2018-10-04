@@ -17,9 +17,7 @@ def check_service_status(service):
         output = output.split()
 
     status = "default"
-    if "(running)" in output:
-        status = "active"
-    elif "(dead)" in output:
+    if "not" in output:
         status = "inactive"
     return status
 
