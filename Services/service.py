@@ -77,3 +77,22 @@ def start_or_stop_services(services, delay, start_or_stop):
                 print("Exiting program")
                 break
 
+def is_string_in_list(list_of_words, *input_string):
+    """Given a string of values and a list this function will find whether the
+    string is present in the list. E.g. "not running" in a list of output"""
+
+    string_in_list = True
+    print(input_string) 
+   
+    first_string_positions = [i for i, x in enumerate(list_of_words) if x ==\
+            input_string[0]]
+    if (len(first_string_positions)== 0):
+        string_in_list = False
+
+    for position in first_string_positions:
+        string_in_list = True
+        for y in range(0, len(input_string)-1):
+            if (input_string[y] != list_of_words[position + y]):
+                string_in_list = False
+
+    return string_in_list
